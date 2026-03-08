@@ -1,7 +1,7 @@
 /**
  * @fileOverview Import bitmap data into Scratch 3.0, resizing image as necessary.
  */
-const getFonts = require('scratch-render-fonts');
+const getFonts = require('clipcc-render-fonts');
 
 /**
  * Given SVG data, inline the fonts. This allows them to be rendered correctly when set
