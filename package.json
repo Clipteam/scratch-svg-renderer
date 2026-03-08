@@ -1,6 +1,6 @@
 {
   "name": "clipcc-svg-renderer",
-  "version": "2.5.46",
+  "version": "2.5.47",
   "description": "SVG renderer for ClipCC",
   "main": "./dist/node/scratch-svg-renderer.js",
   "browser": "./dist/web/scratch-svg-renderer.js",
@@ -28,7 +28,7 @@
     "url": "https://github.com/Clipteam/clipcc-svg-renderer.git"
   },
   "peerDependencies": {
-    "clipcc-render-fonts": "^1.0.253"
+    "clipcc-render-fonts": "^1.0.254"
   },
   "dependencies": {
     "base64-js": "^1.2.1",
@@ -53,7 +53,7 @@
     "json": "9.0.6",
     "mkdirp": "2.1.6",
     "rimraf": "3.0.2",
-    "clipcc-render-fonts": "1.0.253",
+    "clipcc-render-fonts": "1.0.254",
     "scratch-webpack-configuration": "1.6.0",
     "tap": "11.1.5",
     "webpack": "5.96.1",
