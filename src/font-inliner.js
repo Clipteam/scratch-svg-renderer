@@ -30,7 +30,10 @@ const inlineSvgFonts = function (svgString) {
     const fontRegex = /font-family="([^"]*)"/g;
     let matches = fontRegex.exec(svgString);
     while (matches) {
-        fontsNeeded.add(matches[1]);
+        const fonts = matches[1].replace(/&quot;/g, '').split(',');
+        for (const font of fonts) {
+            fontsNeeded.add(font.trim());
+        }
         matches = fontRegex.exec(svgString);
     }
     if (fontsNeeded.size > 0) {
