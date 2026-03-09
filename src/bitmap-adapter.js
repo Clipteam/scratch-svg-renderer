@@ -4,6 +4,10 @@ const base64js = require('base64-js');
  * Adapts Scratch 2.0 bitmaps for use in scratch 3.0
  */
 class BitmapAdapter {
+    /** @type {number} */
+    stageWidth = 480;
+    /** @type {number} */
+    stageHeight = 360;
     /**
      * @param {?function} makeImage HTML image constructor. Tests can provide this.
      * @param {?function} makeCanvas HTML canvas constructor. Tests can provide this.
@@ -11,6 +15,16 @@ class BitmapAdapter {
     constructor (makeImage, makeCanvas) {
         this._makeImage = makeImage ? makeImage : () => new Image();
         this._makeCanvas = makeCanvas ? makeCanvas : () => document.createElement('canvas');
+    }
+
+    /**
+     * Set the stage size, which is needed to determine how to resize bitmaps.
+     * @param {number} width the width of the stage
+     * @param {number} height the height of the stage
+     */
+    setStageSize (width, height) {
+        this.stageWidth = width;
+        this.stageHeight = height;
     }
 
     /**
@@ -67,8 +81,8 @@ class BitmapAdapter {
      * @return {object} Array of new width, new height
      */
     getResizedWidthHeight (oldWidth, oldHeight) {
-        const STAGE_WIDTH = 480;
-        const STAGE_HEIGHT = 360;
+        const STAGE_WIDTH = this.stageWidth;
+        const STAGE_HEIGHT = this.stageHeight;
         const STAGE_RATIO = STAGE_WIDTH / STAGE_HEIGHT;
 
         // If both dimensions are smaller than or equal to corresponding stage dimension,

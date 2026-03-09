@@ -1,6 +1,6 @@
 {
   "name": "clipcc-svg-renderer",
-  "version": "2.5.48",
+  "version": "2.5.49",
   "description": "SVG renderer for ClipCC",
   "main": "./dist/node/scratch-svg-renderer.js",
   "browser": "./dist/web/scratch-svg-renderer.js",
